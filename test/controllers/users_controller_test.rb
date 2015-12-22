@@ -13,13 +13,18 @@ class UsersControllerTest < ActionController::TestCase
     assert_select 'title', 'Signup | Ruby on Rails Tutorial Sample App'
   end
 
-  test "should redirect edit then not logged in" do
+  test "should redirect edit when not logged in" do
     get :edit, id: @user
     assert_redirected_to login_url
   end
 
-  test "should redirect update then not logged in" do
+  test "should redirect update when not logged in" do
     get :update, id: @user, user: { name: @user.name, email: @user.email }
+    assert_redirected_to login_url
+  end
+
+  test "should redirect index when not logged in" do
+    get :index
     assert_redirected_to login_url
   end
 
