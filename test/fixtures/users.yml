@@ -2,3 +2,8 @@ michael:
   name: Bartosz Sobczyński
   email: email@example.com
   password_digest: <%= User.digest('password') %>
+
+tom:
+  name: Tomasz Lemanski
+  email: tomek@wp.pl
+  password_digest: <%= User.digest('password') %>
